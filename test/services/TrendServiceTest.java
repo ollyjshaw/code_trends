@@ -1,4 +1,4 @@
-package service;
+package services;
 
 import org.junit.Test;
 import play.mvc.Content;
@@ -6,6 +6,8 @@ import play.mvc.Content;
 import static org.fest.assertions.Assertions.assertThat;
 import static play.test.Helpers.contentAsString;
 import static play.test.Helpers.contentType;
+
+import view_models.*;
 
 
 /**
