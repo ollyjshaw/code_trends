@@ -6,9 +6,9 @@ import view_models.*;
 
 public class CodeTrendService {
 
-    TwitterService twitterService;
+    CodeTrendAnalytics twitterService;
 
-    public CodeTrendService(TwitterService service){
+    public CodeTrendService(CodeTrendAnalytics service){
         this.twitterService = service;
     }
 
