@@ -1,4 +1,4 @@
-package service;
+package services;
 
 public class CodeTrendItem {
     private final String language;

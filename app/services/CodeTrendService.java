@@ -1,6 +1,8 @@
-package service;
+package services;
 
 import java.util.List;
+import view_models.*;
+
 
 public class CodeTrendService {
 
