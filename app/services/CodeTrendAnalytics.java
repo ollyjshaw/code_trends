@@ -2,6 +2,6 @@ package services;
 
 import java.util.List;
 
-public interface TwitterService {
+public interface CodeTrendAnalytics {
     public List<CodeTrendItem> getCodeTrends(String[] input) ;
 }

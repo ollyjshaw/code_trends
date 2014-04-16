@@ -3,7 +3,7 @@ package services;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MockTwitterService implements TwitterService {
+public class MockCodeTrendAnalytics implements CodeTrendAnalytics {
 
     @Override
     public List<CodeTrendItem> getCodeTrends(String[] input) {

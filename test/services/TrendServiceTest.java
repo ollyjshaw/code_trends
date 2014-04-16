@@ -1,7 +1,6 @@
 package services;
 
 import org.junit.Test;
-import play.mvc.Content;
 
 import static org.fest.assertions.Assertions.assertThat;
 import static play.test.Helpers.contentAsString;
@@ -14,7 +13,7 @@ public class TrendServiceTest {
    @Test
    public void itShouldReturnAViewModelWhenGivenData(){
 
-       TwitterService twitterService = new MockTwitterService();
+       CodeTrendAnalytics twitterService = new MockCodeTrendAnalytics();
        CodeTrendService service = new CodeTrendService(twitterService);
        String [] input = new String[]{"Java", "C#", "Scala"};
        CodeTrendViewModel viewModel = service.getTrends(input);
