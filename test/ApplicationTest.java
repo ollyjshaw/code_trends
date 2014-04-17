@@ -39,6 +39,29 @@ public class ApplicationTest {
         assertThat(contentType(html)).isEqualTo("text/html");
         assertThat(contentAsString(html)).contains("Your new application is ready.");
     }
+	
+	@Test
+    public void renderInputTemplate() {
+        Content html = views.html.input.render();
+        assertThat(contentType(html)).isEqualTo("text/html");
+		assertThat(contentAsString(html)).contains("Search Twitter popularity");
+    }
+
+    @Test
+    public void checkInputViewHasTitle() {
+        Content html = views.html.input.render();
+        assertThat(contentAsString(html)).contains("title for input view");
+    }
+
+	// Check that the input page contains 3 text fields and a button
+	@Test
+	public void checkHTMLInputFieldsExist() {
+		Content html = views.html.input.render();
+		assertThat(contentAsString(html)).contains("<input type=\"text\" id=\"trend1\" name=\"trend1\" value=\"\">");
+		assertThat(contentAsString(html)).contains("<input type=\"text\" id=\"trend2\" name=\"trend2\" value=\"\">");
+		assertThat(contentAsString(html)).contains("<input type=\"text\" id=\"trend3\" name=\"trend3\" value=\"\">");
+		assertThat(contentAsString(html)).contains("<input class=\"button\" type=\"submit\" value=\"View trends\">");
+	}
 
 
 }
