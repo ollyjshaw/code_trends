@@ -1,12 +1,10 @@
 package services;
 
 import org.junit.Test;
+import view_models.CodeTrendViewModel;
 
 import static org.fest.assertions.Assertions.assertThat;
-import static org.junit.Assert.*;
-import static play.test.Helpers.contentAsString;
-import static play.test.Helpers.contentType;
-import view_models.*;
+import static org.junit.Assert.assertEquals;
 
 public class TrendServiceTest {
 
@@ -44,7 +42,5 @@ public class TrendServiceTest {
 	   }
 	   
 	   assertEquals(100.00, total, 0.1);
-	   
    }
-
 }

@@ -1,24 +1,11 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.fasterxml.jackson.databind.JsonNode;
 import models.InputForm;
-import org.junit.*;
-
+import org.junit.Test;
 import play.data.Form;
-import play.mvc.*;
-import play.test.*;
-import play.data.DynamicForm;
-import play.data.validation.ValidationError;
-import play.data.validation.Constraints.RequiredValidator;
-import play.i18n.Lang;
-import play.libs.F;
-import play.libs.F.*;
+import play.mvc.Content;
 
-import static play.test.Helpers.*;
-import static org.fest.assertions.Assertions.*;
+import static org.fest.assertions.Assertions.assertThat;
+import static play.test.Helpers.contentAsString;
+import static play.test.Helpers.contentType;
 
 public class ApplicationTest {
 
@@ -56,9 +43,6 @@ public class ApplicationTest {
 		assertThat(contentAsString(html)).contains("<input type=\"text\" id=\"language1\" name=\"language1\" value=\"\" >");
 		assertThat(contentAsString(html)).contains("<input type=\"text\" id=\"language2\" name=\"language2\" value=\"\" >");
 		assertThat(contentAsString(html)).contains("<input type=\"text\" id=\"language3\" name=\"language3\" value=\"\" >");
-
 		assertThat(contentAsString(html)).contains("<input class=\"button\" type=\"submit\" value=\"View trends\">");
 	}
-
-
 }
