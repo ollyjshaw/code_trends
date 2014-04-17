@@ -9,4 +9,5 @@ GET        /                    controllers.Application.index()
 GET        /assets/*file        controllers.Assets.at(path="/public", file)
 
 GET        /trends/new          controllers.Trends.newTrend()
+GET        /trends/result       controllers.Trends.result()
 POST       /trends/             controllers.Trends.submit()

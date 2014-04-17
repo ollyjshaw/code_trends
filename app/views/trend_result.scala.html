@@ -1,0 +1,12 @@
+@import view_models.CodeTrendViewModel
+@(results : CodeTrendViewModel)
+@main("Code Trend Results") {
+
+        <legend>Your results</legend>
+        @results
+@for(result <- results.data) {
+        <p>@result.language: @result.popularity</p>
+        }
+
+
+}
