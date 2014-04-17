@@ -1,27 +1,37 @@
+@(inputForm: Form[InputForm])
+@import helper._
+
 @main("title for input view") {
-        <form action="" method="POST">
-			
-			<fieldset>
-				
-				<legend>Search Twitter popularity</legend>
-				
-				<p class="group">
-					<label for="trend1">Programming language #1</label>
-					<input type="text" id="trend1" name="trend1" value="">
-				</p>
-				<p class="group">
-					<label for="trend2">Programming language #2</label>
-					<input type="text" id="trend2" name="trend2" value="">
-				</p>
-				<p class="group">
-					<label for="trend3">Programming language #3</label>
-					<input type="text" id="trend3" name="trend3" value="">
-				</p>
-				<p class="action group">
-					<input class="button" type="submit" value="View trends">
-				</p>
-				
-			</fieldset>
-			
-		</form>
+
+    @helper.form(action = routes.Trends.submit()) {
+
+        <legend>Search Twitter popularity</legend>
+        @helper.inputText(inputForm("language1"))
+        @helper.inputText(inputForm("language2"))
+        @helper.inputText(inputForm("language3"))
+        <input class="button" type="submit" value="View trends">
+
+			@*<fieldset>*@
+				@**@
+				@*<legend>Search Twitter popularity</legend>*@
+				@**@
+				@*<p class="group">*@
+					@*<label for="trend1">Programming language #1</label>*@
+					@*<input type="text" id="trend1" name="trend1" value="">*@
+				@*</p>*@
+				@*<p class="group">*@
+					@*<label for="trend2">Programming language #2</label>*@
+					@*<input type="text" id="trend2" name="trend2" value="">*@
+				@*</p>*@
+				@*<p class="group">*@
+					@*<label for="trend3">Programming language #3</label>*@
+					@*<input type="text" id="trend3" name="trend3" value="">*@
+				@*</p>*@
+				@*<p class="action group">*@
+					@*<input class="button" type="submit" value="View trends">*@
+				@*</p>*@
+				@**@
+			@*</fieldset>*@
+    }
+
 }
