@@ -10,7 +10,7 @@ public class MockCodeTrendAnalytics implements CodeTrendAnalytics {
 
         List<CodeTrendItem> result = new LinkedList<CodeTrendItem>();
         for (String language : input){
-           CodeTrendItem item = new CodeTrendItem(language);
+           CodeTrendItem item = new CodeTrendItem(language, 0D);
             result.add(item);
         }
         return result;
