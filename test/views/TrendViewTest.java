@@ -1,8 +1,6 @@
 package views;
 
-import models.InputForm;
 import org.junit.Test;
-import play.data.Form;
 import play.mvc.Content;
 import services.CodeTrendItem;
 import view_models.CodeTrendViewModel;
@@ -26,11 +24,9 @@ public class TrendViewTest {
         CodeTrendViewModel model = new CodeTrendViewModel(items);
         Content html = trend_result.render(model);
         assertThat(contentType(html)).isEqualTo("text/html");
-        assertThat(contentAsString(html)).contains("Your results");
-        assertThat(contentAsString(html)).contains("Java: 60%");
-        assertThat(contentAsString(html)).contains("Ruby: 20%");
-        assertThat(contentAsString(html)).contains("Scalas: 20%");
+        assertThat(contentAsString(html)).contains("The code trends are as follows");
+        assertThat(contentAsString(html)).contains("Java: 60.0%");
+        assertThat(contentAsString(html)).contains("Ruby: 20.0%");
+        assertThat(contentAsString(html)).contains("Scala: 20.0%");
     }
-	
-
 }

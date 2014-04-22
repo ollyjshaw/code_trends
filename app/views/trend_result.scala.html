@@ -4,6 +4,6 @@
         <legend>The code trends are as follows!</legend>
        
         @for(result <- results.getData()) {
-        	<p>@result.getLanguage(): @result.getPopularity()</p>
+        	<p>@result.getLanguage(): @result.getPopularity()%</p>
         }
 }

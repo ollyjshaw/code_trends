@@ -1,9 +1,14 @@
 package services;
 
 import models.InputForm;
-import org.junit.Test;
-import view_models.CodeTrendViewModel;
 
+import org.junit.Test;
+
+import services.CodeTrendAnalytics;
+import services.CodeTrendItem;
+import services.CodeTrendService;
+import services.RandomCodeTrendAnalytics;
+import view_models.CodeTrendViewModel;
 import static org.fest.assertions.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
