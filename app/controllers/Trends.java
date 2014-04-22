@@ -27,9 +27,5 @@ public class Trends extends Controller {
     public static Result newTrend() {
         return ok(input.render(inputForm));
     }
-
-    public static Result result() {
-        return TODO;
-    }
-
+    
 }
