@@ -1,0 +1,9 @@
+@(results : view_models.CodeTrendViewModel)
+@main("Code Trend Results") {
+
+        <legend>The code trends are as follows!</legend>
+       
+        @for(result <- results.getData()) {
+        	<p>@result.getLanguage(): @result.getPopularity()%</p>
+        }
+}

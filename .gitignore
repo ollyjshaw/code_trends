@@ -1,4 +1,6 @@
 logs
+bin
+.cache
 project/project
 project/target
 target

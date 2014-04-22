@@ -1,6 +1,8 @@
 package services;
 
 import java.util.List;
+
+import models.InputForm;
 import view_models.*;
 
 
@@ -12,7 +14,12 @@ public class CodeTrendService {
         this.twitterService = service;
     }
 
-    public CodeTrendViewModel getTrends(String[] input) {
+    public CodeTrendViewModel getTrends(InputForm form) {
+
+        String [] input = new String [3];
+        input[0] = form.language1;
+        input[1] = form.language2;
+        input[2] = form.language3;
 
         //create view model
         List<CodeTrendItem> items = twitterService.getCodeTrends(input);

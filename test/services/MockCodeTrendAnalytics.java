@@ -3,6 +3,9 @@ package services;
 import java.util.LinkedList;
 import java.util.List;
 
+import services.CodeTrendAnalytics;
+import services.CodeTrendItem;
+
 public class MockCodeTrendAnalytics implements CodeTrendAnalytics {
 
     @Override
