@@ -13,8 +13,6 @@ import views.html.trend_result;
 public class Trends extends Controller {
 
     public static Result submit() {
-//        return redirect(routes.Trends.result());
-//        return redirect("/trends/result");
         Form<InputForm> boundForm = inputForm.bindFromRequest();
         InputForm input = boundForm.get();
         RandomCodeTrendAnalytics random = new RandomCodeTrendAnalytics();
