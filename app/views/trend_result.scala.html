@@ -1,9 +1,51 @@
 @(results : view_models.CodeTrendViewModel)
+
 @main("Code Trend Results") {
 
-        <legend>The code trends are as follows!</legend>
-       
-        @for(result <- results.getData()) {
-        	<p>@result.getLanguage(): @result.getPopularity()%</p>
-        }
+        <legend>The code trends are as follows!</legend>       
+		<canvas id="canvas" height="450" width="450"></canvas>
+
+	<script>
+		
+		var $ = "foo";
+		
+		// ensure $ === jQuery
+		(function($){
+			
+			// DOM ready
+			$(function(){
+				
+				var data = [
+						{
+							value: @results.getData().get(0).getPopularity(),
+							color:"#332F45"
+						},
+						{
+							value : @results.getData().get(1).getPopularity(),
+							color : "#015770"
+						},
+						{
+							value : @results.getData().get(2).getPopularity(),
+							color : "#2A8782"
+						}
+					
+					];
+
+					var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(data);
+					
+					$(".key").find("tr").each(function(i,v){
+						$(this).find("th").css("background-color", data[i].color);
+					});
+					
+				});
+			})(window.jQuery);
+		
+		</script>
+		<table class="key">
+					
+			@for(result <- results.getData()){
+				<tr><th>@result.getLanguage() </th> <td>@result.toString()%</td></tr>
+			}
+		</table>
+					
 }

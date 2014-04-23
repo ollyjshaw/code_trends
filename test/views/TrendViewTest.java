@@ -19,14 +19,14 @@ public class TrendViewTest {
     public void renderTemplate() {
         List<CodeTrendItem> items = new LinkedList<CodeTrendItem>();
         items.add(new CodeTrendItem("Ruby", 20d));
-        items.add(new CodeTrendItem("Java", 60d));
-        items.add(new CodeTrendItem("Scala", 20d));
+        items.add(new CodeTrendItem("Java", 60.33333d));
+        items.add(new CodeTrendItem("Scala", 20.66666d));
         CodeTrendViewModel model = new CodeTrendViewModel(items);
         Content html = trend_result.render(model);
         assertThat(contentType(html)).isEqualTo("text/html");
         assertThat(contentAsString(html)).contains("The code trends are as follows");
-        assertThat(contentAsString(html)).contains("Java: 60.0%");
-        assertThat(contentAsString(html)).contains("Ruby: 20.0%");
-        assertThat(contentAsString(html)).contains("Scala: 20.0%");
+        assertThat(contentAsString(html)).contains("<tr><th>Ruby </th> <td>20.00%</td></tr>");
+        assertThat(contentAsString(html)).contains("<tr><th>Java </th> <td>60.33%</td></tr>");
+        assertThat(contentAsString(html)).contains("<tr><th>Scala </th> <td>20.67%</td></tr>");
     }
 }
