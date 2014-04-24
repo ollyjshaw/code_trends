@@ -1,5 +1,7 @@
 package integration;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -10,7 +12,6 @@ import static play.test.Helpers.*;
 
 public class IntegrationTest {
 
-	@Ignore
     @Test
     public void testTrends() {
         running(testServer(3333, fakeApplication(inMemoryDatabase())), HTMLUNIT, new Callback<TestBrowser>() {
@@ -21,7 +22,7 @@ public class IntegrationTest {
                 browser.fill("#language1").with("java");
                 browser.fill("#language2").with("C#");
                 browser.fill("#language3").with("Scala");
-                browser.submit(".button");
+                browser.withDefaultPageWait(2, TimeUnit.SECONDS).submit(".button");
                 assertThat(browser.title()).isEqualTo("Code Trend Results");
             }
         });
