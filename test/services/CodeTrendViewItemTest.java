@@ -1,8 +1,6 @@
 package services;
 
 import static org.fest.assertions.Assertions.assertThat;
-import static org.junit.Assert.*;
-import static play.test.Helpers.contentType;
 
 import org.junit.Test;
 
