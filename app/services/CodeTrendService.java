@@ -2,14 +2,18 @@ package services;
 
 import java.util.List;
 
+import com.google.inject.Inject;
+
 import models.InputForm;
 import view_models.*;
 
 
 public class CodeTrendService {
 
+	
     CodeTrendAnalytics twitterService;
 
+    @Inject
     public CodeTrendService(CodeTrendAnalytics service){
         this.twitterService = service;
     }
