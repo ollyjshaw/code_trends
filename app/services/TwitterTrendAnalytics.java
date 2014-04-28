@@ -1,5 +1,7 @@
 package services;
 
+import helpers.ApplicationProperties;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -101,9 +103,11 @@ public class TwitterTrendAnalytics implements CodeTrendAnalytics {
 
 	private ConfigurationBuilder getConfigurationBuilder() {
 		ConfigurationBuilder cb = new ConfigurationBuilder();
-		cb.setDebugEnabled(true).setUseSSL(true).setOAuthConsumerKey("")
-				.setOAuthConsumerSecret("").setOAuthAccessToken("")
-				.setOAuthAccessTokenSecret("");
+		cb.setDebugEnabled(true).setUseSSL(true)
+				.setOAuthConsumerKey(ApplicationProperties.OAUTHCONSUMERKEY)
+				.setOAuthConsumerSecret(ApplicationProperties.OAUTHCONSUMERSECRET)
+				.setOAuthAccessToken(ApplicationProperties.OAUTHACCESSTOKEN)
+				.setOAuthAccessTokenSecret(ApplicationProperties.OAUTHACCESSTOKENSECRET);
 
 		return cb;
 	}
