@@ -3,6 +3,9 @@ package services;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class RandomCodeTrendAnalytics implements CodeTrendAnalytics{
 
 	@Override
