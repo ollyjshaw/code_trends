@@ -15,7 +15,7 @@ public class CodeTrendService {
     }
 
     public CodeTrendViewModel getTrends(InputForm form) {
-
+    	play.Logger.info("CodeTrendViewModel.getTrends, search for " + form.language1 + ", " + form.language2 + ", " + form.language3);
         String [] input = new String [3];
         input[0] = form.language1;
         input[1] = form.language2;
