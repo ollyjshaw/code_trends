@@ -1,9 +1,11 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.inject.Inject;
 
 import models.InputForm;
 import play.data.Form;
+import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import services.CodeTrendService;
@@ -29,6 +31,22 @@ public class Trends extends Controller {
 
     public Result newTrend() {
         return ok(input.render(inputForm));
+    }
+    
+    public Result data() {
+    	Form<InputForm> boundForm = inputForm.bindFromRequest();
+        InputForm input = boundForm.get();
+
+        CodeTrendViewModel viewModel = service.getTrends(input);
+    	
+    	
+    	ObjectNode result = Json.newObject();
+
+    	result.put("data", viewModel.getData().toString());
+    	result.put("language1", input.language1);
+    	result.put("language2", input.language2);
+    	result.put("language3", input.language3);
+    	return ok(result);
     }
     
 }
