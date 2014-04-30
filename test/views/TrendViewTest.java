@@ -1,17 +1,19 @@
 package views;
 
-import org.junit.Test;
-import play.mvc.Content;
-import services.CodeTrendItem;
-import view_models.CodeTrendViewModel;
-import views.html.trend_result;
+import static org.fest.assertions.Assertions.assertThat;
+import static play.test.Helpers.contentAsString;
+import static play.test.Helpers.contentType;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.fest.assertions.Assertions.assertThat;
-import static play.test.Helpers.contentAsString;
-import static play.test.Helpers.contentType;
+import org.junit.Test;
+
+import play.mvc.Content;
+import services.CodeTrendItem;
+import view_models.CodeTrendViewModel;
+import views.html.trend_result;
+import views.txt.trend_data;
 
 public class TrendViewTest {
 

@@ -1,0 +1,8 @@
+@(results : view_models.CodeTrendViewModel)
+{
+	data:[
+		@for(result <- results.getData()) {
+			{language:"@result.getLanguage()", score:@result.toString()},
+		}
+	]
+}
