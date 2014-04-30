@@ -2,6 +2,7 @@ package services;
 
 import java.util.List;
 
+import exceptions.ApplicationException;
 import models.InputForm;
 import view_models.*;
 
@@ -14,7 +15,7 @@ public class CodeTrendService {
         this.twitterService = service;
     }
 
-    public CodeTrendViewModel getTrends(InputForm form) {
+    public CodeTrendViewModel getTrends(InputForm form) throws ApplicationException {
 
         String [] input = new String [3];
         input[0] = form.language1;

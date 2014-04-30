@@ -26,4 +26,15 @@ public class IntegrationTest {
             }
         });
     }
+	
+    @Test
+    public void testPageNotFound() {
+        running(testServer(3333, fakeApplication(inMemoryDatabase())), HTMLUNIT, new Callback<TestBrowser>() {
+        	
+            public void invoke(TestBrowser browser) throws InterruptedException {
+                browser.goTo("http://localhost:3333/dummyUrlThatDoesntExist");
+                assertThat(browser.title()).isEqualTo("Page Not Found");
+            }
+        });
+    }
 }
