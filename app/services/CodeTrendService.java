@@ -3,11 +3,13 @@ package services;
 import java.util.List;
 
 import com.google.inject.Inject;
+import com.google.inject.Singleton;
 
 import models.InputForm;
 import view_models.*;
 
 
+@Singleton
 public class CodeTrendService {
 
     CodeTrendAnalytics analyticsService;
