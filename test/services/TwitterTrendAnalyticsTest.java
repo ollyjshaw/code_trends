@@ -7,10 +7,12 @@ import static play.test.Helpers.running;
 
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class TwitterTrendAnalyticsTest {
 
+	@Ignore("Need to have credentials to run")
 	@Test
 	public void testGetCodeTrends() {
 		running(fakeApplication(), new Runnable() {		      

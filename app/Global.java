@@ -6,7 +6,6 @@ import play.Application;
 import play.GlobalSettings;
 import services.CodeTrendAnalytics;
 import services.RandomCodeTrendAnalytics;
-import services.TwitterTrendAnalytics;
 
 public class Global extends GlobalSettings {
 

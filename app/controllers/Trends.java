@@ -7,7 +7,6 @@ import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import services.CodeTrendService;
-import services.RandomCodeTrendAnalytics;
 import view_models.CodeTrendViewModel;
 import views.html.input;
 import views.html.trend_result;
@@ -20,6 +19,7 @@ public class Trends extends Controller {
     public Result submit() {
         Form<InputForm> boundForm = inputForm.bindFromRequest();
         InputForm input = boundForm.get();
+
         CodeTrendViewModel viewModel = service.getTrends(input);
         return ok(trend_result.render(viewModel));
 
