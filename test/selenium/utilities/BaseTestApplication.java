@@ -1,4 +1,4 @@
-package utilities;
+package selenium.utilities;
 
 import static play.test.Helpers.fakeApplication;
 import static play.test.Helpers.fakeGlobal;
@@ -32,7 +32,7 @@ public class BaseTestApplication {
 		testServer.start();
 		
 		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 	}
 
 	@AfterClass

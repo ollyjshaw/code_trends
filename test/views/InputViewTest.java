@@ -32,6 +32,6 @@ public class InputViewTest {
 		assertThat(contentAsString(html)).contains("<input type=\"text\" id=\"language1\" name=\"language1\" value=\"\" >");
 		assertThat(contentAsString(html)).contains("<input type=\"text\" id=\"language2\" name=\"language2\" value=\"\" >");
 		assertThat(contentAsString(html)).contains("<input type=\"text\" id=\"language3\" name=\"language3\" value=\"\" >");
-		assertThat(contentAsString(html)).contains("<input class=\"button\" type=\"submit\" value=\"View trends\">");
+		assertThat(contentAsString(html)).contains("<input class=\"button\" type=\"submit\" id=\"view_trends\" value=\"View trends\">");
 	}
 }

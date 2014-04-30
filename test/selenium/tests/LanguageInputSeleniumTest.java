@@ -1,21 +1,22 @@
-package views;
+package selenium.tests;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import utilities.BaseTestApplication;
-import utilities.InputFormHelper;
-import utilities.WebDriverHelper;
+import selenium.utilities.BaseTestApplication;
+import selenium.utilities.InputFormHelper;
+import selenium.utilities.WebDriverHelper;
 
-public class InputViewSeleniumTest extends BaseTestApplication{
+public class LanguageInputSeleniumTest extends BaseTestApplication{
 	
 	InputFormHelper inputFormHelper = new InputFormHelper();
 	WebDriverHelper webDriverHelper = new WebDriverHelper();
 	
 	@Test
-	public void checkInputViewHasTitle() {
+	public void loadInputViewPage() {
 		driver.get(DEFAULT_URL);
+		
 		assertEquals(driver.getTitle(), "title for input view");
 	}
 	
@@ -25,7 +26,7 @@ public class InputViewSeleniumTest extends BaseTestApplication{
 		
 		inputFormHelper.populateDefaultLaguageDetails(driver);
 		inputFormHelper.clickSubmitButton(driver);
-		 
+		
 		assertEquals(driver.getTitle(), "Code Trend Results");
 	}
 }
