@@ -1,0 +1,8 @@
+@(elements: views.html.helper.FieldElements)
+
+@import views.html.helper._
+
+<p class="group @if(elements.hasErrors) {error}">
+    <label for="@elements.id">@elements.label</label>
+    @elements.input
+</p>
