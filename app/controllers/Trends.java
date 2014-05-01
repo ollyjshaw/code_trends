@@ -12,8 +12,6 @@ import views.txt.trend_data;
 
 import com.google.inject.Inject;
 
-import com.google.inject.Inject;
-
 public class Trends extends Controller {
 
     @Inject
