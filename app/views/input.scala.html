@@ -6,12 +6,13 @@
 @main("Twitter programming language trends") {
 
     @helper.form(action = routes.Trends.submit()) {
-		
-		@inputText(inputForm("Language 1"))
-		@inputText(inputForm("Language 2"))
-		@inputText(inputForm("Language 3"))
-		
-        <input class="button" type="submit" value="View trends">
+
+		@inputText(inputForm("language1"))
+		@inputText(inputForm("language2"))
+		@inputText(inputForm("language3"))
+
+        <input class="button" type="submit" id="view_trends" value="View trends">
 
     }
 }
+
