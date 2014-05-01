@@ -1,4 +1,5 @@
 package globals;
+
 import play.Logger;
 import play.mvc.SimpleResult;
 import play.mvc.Http.RequestHeader;
