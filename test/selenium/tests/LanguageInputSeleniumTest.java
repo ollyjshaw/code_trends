@@ -17,7 +17,7 @@ public class LanguageInputSeleniumTest extends BaseTestApplication{
 	public void loadInputViewPage() {
 		driver.get(DEFAULT_URL);
 		
-		assertEquals(driver.getTitle(), "title for input view");
+		assertEquals(driver.getTitle(), "Twitter programming language trends");
 	}
 	
 	@Test

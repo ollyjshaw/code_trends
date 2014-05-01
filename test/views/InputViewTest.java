@@ -17,13 +17,13 @@ public class InputViewTest {
     public void renderInputTemplate() {
         Content html = views.html.input.render(inputForm);
         assertThat(contentType(html)).isEqualTo("text/html");
-		assertThat(contentAsString(html)).contains("Search Twitter popularity");
+		assertThat(contentAsString(html)).contains("Twitter programming language trends");
     }
 
     @Test
     public void checkInputViewHasTitle() {
         Content html = views.html.input.render(inputForm);
-        assertThat(contentAsString(html)).contains("title for input view");
+        assertThat(contentAsString(html)).contains("Twitter programming language trends");
     }
 
 	@Test
