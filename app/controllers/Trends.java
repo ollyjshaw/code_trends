@@ -20,8 +20,6 @@ public class Trends extends Controller {
 		Form<InputForm> boundForm = inputForm.bindFromRequest();
 		InputForm input = boundForm.get();
 
-		// service = new CodeTrendService(new RandomCodeTrendAnalytics());
-
 		CodeTrendViewModel viewModel = service.getTrends(input);
 		return ok(trend_result.render(viewModel));
 
