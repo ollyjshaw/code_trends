@@ -1,6 +1,6 @@
 @(results : view_models.CodeTrendViewModel)
 {
 	data:[
-		@{results.getData() map((arg:services.CodeTrendItem) => "{language:\""+arg.getLanguage()+"\",score:"+("%.2f".format(arg.getPopularity()))+"}") mkString (",")}
+		 @{results.getData() map((arg:services.CodeTrendItem) => "{language:\""+arg.getLanguage()+"\",score:"+("%.2f".format(arg.getPopularity()))+"}") mkString (",")}
 	]
 }
