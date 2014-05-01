@@ -16,29 +16,29 @@ import play.test.TestServer;
 
 public class BaseTestApplication {
 
-	private static TestServer testServer;
+    private static TestServer testServer;
 
-	public static FakeApplication app;
-	protected static final String DEFAULT_URL = "http://localhost:9000";
-	protected static WebDriver driver;
+    public static FakeApplication app;
+    protected static final String DEFAULT_URL = "http://localhost:9000";
+    protected static WebDriver driver;
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-		System.setProperty("webdriver.chrome.driver",
-				".\\chromedriver\\chromedriver.exe");
-		GlobalSettings glob = new Global();
-		app = fakeApplication(glob);
+    @BeforeClass
+    public static void setUpBeforeClass() throws Exception {
+        System.setProperty("webdriver.chrome.driver",
+                ".\\chromedriver\\chromedriver.exe");
+        GlobalSettings glob = new Global();
+        app = fakeApplication(glob);
 
-		testServer = new TestServer(9000, app);
-		testServer.start();
+        testServer = new TestServer(9000, app);
+        testServer.start();
 
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-	}
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+    }
 
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-		driver.quit();
-		testServer.stop();
-	}
+    @AfterClass
+    public static void tearDownAfterClass() throws Exception {
+        driver.quit();
+        testServer.stop();
+    }
 }

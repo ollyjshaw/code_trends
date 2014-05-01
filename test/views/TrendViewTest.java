@@ -26,9 +26,13 @@ public class TrendViewTest {
         CodeTrendViewModel model = new CodeTrendViewModel(items);
         Content html = trend_result.render(model);
         assertThat(contentType(html)).isEqualTo("text/html");
-        assertThat(contentAsString(html)).contains("The code trends are as follows");
-        assertThat(contentAsString(html)).contains("<tr><th>Ruby </th> <td>20.00%</td></tr>");
-        assertThat(contentAsString(html)).contains("<tr><th>Java </th> <td>60.33%</td></tr>");
-        assertThat(contentAsString(html)).contains("<tr><th>Scala </th> <td>20.67%</td></tr>");
+        assertThat(contentAsString(html)).contains(
+                "The code trends are as follows");
+        assertThat(contentAsString(html)).contains(
+                "<tr><th>Ruby </th> <td>20.00%</td></tr>");
+        assertThat(contentAsString(html)).contains(
+                "<tr><th>Java </th> <td>60.33%</td></tr>");
+        assertThat(contentAsString(html)).contains(
+                "<tr><th>Scala </th> <td>20.67%</td></tr>");
     }
 }

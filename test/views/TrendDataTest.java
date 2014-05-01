@@ -23,8 +23,11 @@ public class TrendDataTest {
         items.add(new CodeTrendItem("Scala", 20.66666d));
         CodeTrendViewModel model = new CodeTrendViewModel(items);
         Content txt = trend_data.render(model);
-        assertThat(contentAsString(txt)).contains("{language:\"Ruby\",score:20.00}");   	
-        assertThat(contentAsString(txt)).contains("{language:\"Java\",score:60.33}");  
-        assertThat(contentAsString(txt)).contains("{language:\"Scala\",score:20.67}");  
+        assertThat(contentAsString(txt)).contains(
+                "{language:\"Ruby\",score:20.00}");
+        assertThat(contentAsString(txt)).contains(
+                "{language:\"Java\",score:60.33}");
+        assertThat(contentAsString(txt)).contains(
+                "{language:\"Scala\",score:20.67}");
     }
 }

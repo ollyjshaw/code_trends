@@ -12,24 +12,25 @@ import org.junit.Test;
 
 public class TwitterTrendAnalyticsTest {
 
-	@Ignore("Need to have credentials to run")
-	@Test
-	public void testGetCodeTrends() {
-		running(fakeApplication(), new Runnable() {		      
-			public void run() {
-				CodeTrendAnalytics analytics = new TwitterTrendAnalytics();
-				List<CodeTrendItem> items = analytics.getCodeTrends(new String[] {"Java", "C#", "Ruby" });
+    @Ignore("Need to have credentials to run")
+    @Test
+    public void testGetCodeTrends() {
+        running(fakeApplication(), new Runnable() {
+            public void run() {
+                CodeTrendAnalytics analytics = new TwitterTrendAnalytics();
+                List<CodeTrendItem> items = analytics
+                        .getCodeTrends(new String[] { "Java", "C#", "Ruby" });
 
-				assertThat(items.size()).isEqualTo(3);
+                assertThat(items.size()).isEqualTo(3);
 
-				Double total = 0D;
+                Double total = 0D;
 
-				for (CodeTrendItem item : items) {
-					total += item.getPopularity();
-				}
+                for (CodeTrendItem item : items) {
+                    total += item.getPopularity();
+                }
 
-				assertEquals(100.00, total, 0.1);
-			}
-		});
-	}
+                assertEquals(100.00, total, 0.1);
+            }
+        });
+    }
 }

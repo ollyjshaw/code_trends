@@ -15,15 +15,16 @@ import play.mvc.Result;
 
 public class TrendsTest {
 
-	@Test
-	public void trendsDataTest() {
-	   running(fakeApplication(), new Runnable() {
-	       public void run() {;
-	           Result result = callAction(controllers.routes.ref.Trends.data());
-	           //assert(contentAsString(result).contains("test1"));
-	           assertThat(status(result)).isEqualTo(OK);
-	           assertThat(contentType(result)).isEqualTo("application/json");
-	       }
-	   });
-	}
+    @Test
+    public void trendsDataTest() {
+        running(fakeApplication(), new Runnable() {
+            public void run() {
+                ;
+                Result result = callAction(controllers.routes.ref.Trends.data());
+                // assert(contentAsString(result).contains("test1"));
+                assertThat(status(result)).isEqualTo(OK);
+                assertThat(contentType(result)).isEqualTo("application/json");
+            }
+        });
+    }
 }
