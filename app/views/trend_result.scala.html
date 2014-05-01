@@ -6,39 +6,34 @@
 		<canvas id="canvas" height="450" width="450"></canvas>
 
 	<script>
-		
-		var $ = "foo";
-		
-		// ensure $ === jQuery
-		(function($){
-			
-			// DOM ready
-			$(function(){
-				
-				var data = [
-						{
-							value: @results.getData().get(0).getPopularity(),
-							color:"#332F45"
-						},
-						{
-							value : @results.getData().get(1).getPopularity(),
-							color : "#015770"
-						},
-						{
-							value : @results.getData().get(2).getPopularity(),
-							color : "#2A8782"
-						}
-					
-					];
-
-					var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(data);
-					
-					$(".key").find("tr").each(function(i,v){
-						$(this).find("th").css("background-color", data[i].color);
-					});
-					
-				});
-			})(window.jQuery);
+	
+	$(function(){
+	    var data = [
+                        {
+                            value: @results.getData().get(0).getPopularity(),
+                            color:"#332F45"
+                        },
+                        {
+                            value : @results.getData().get(1).getPopularity(),
+                            color : "#015770"
+                        },
+                        {
+                            value : @results.getData().get(2).getPopularity(),
+                            color : "#2A8782"
+                        }
+                    
+                    ];
+        
+        var languages = ['@results.getData().get(0).getLanguage()',
+                         '@results.getData().get(1).getLanguage()',
+                         '@results.getData().get(2).getLanguage()'   ]
+                    
+        DC.loadChart(data);
+        
+        DC.refreshData(data)
+        
+        });
+        
 		
 		</script>
 		<table class="key">
