@@ -1,5 +1,6 @@
 package integration;
 
+import exceptions.ApplicationException;
 import globals.Global;
 
 import java.util.Arrays;
@@ -23,6 +24,7 @@ import play.Logger;
 import play.libs.F.Callback;
 import play.test.TestBrowser;
 import services.CodeTrendAnalytics;
+import services.CodeTrendItem;
 import services.RandomCodeTrendAnalytics;
 import services.TwitterTrendAnalytics;
 import static org.fest.assertions.Assertions.assertThat;
@@ -114,20 +116,24 @@ public class IntegrationTest {
         }
     }
     
-    public class GlobalTest extends Global {
-
-        private Injector injector;
+    protected class GlobalTest extends Global {
 
         @Override
         public void onStart(Application application) {
-            Logger.info("Application Test has started");
-            injector = Guice.createInjector(new AbstractModule() {
+            Logger.info("Application has started");
+            Injector injector = Guice.createInjector(new AbstractModule() {
                 @Override
                 protected void configure() {
-                    bind(CodeTrendAnalytics.class).to(
-                            TwitterTrendAnalytics.class);
+                    bind(CodeTrendAnalytics.class).to(CodeTrendAnalyticsException.class);
                 }
             });
+        }        
+    }
+    
+    public static class CodeTrendAnalyticsException implements CodeTrendAnalytics {
+        public List<CodeTrendItem> getCodeTrends(String[] input) throws ApplicationException {
+            throw new ApplicationException("Test Exception");
         }
     }
+
 }
