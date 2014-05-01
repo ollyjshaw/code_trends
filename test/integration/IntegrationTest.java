@@ -3,13 +3,11 @@ package integration;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONString;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import play.libs.F.Callback;
 import play.test.TestBrowser;
-import scala.util.parsing.json.JSONFormat;
 import static org.fest.assertions.Assertions.assertThat;
 import static play.test.Helpers.*;
 
