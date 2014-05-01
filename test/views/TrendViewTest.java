@@ -1,17 +1,18 @@
 package views;
 
-import org.junit.Test;
-import play.mvc.Content;
-import services.CodeTrendItem;
-import view_models.CodeTrendViewModel;
-import views.html.trend_result;
+import static org.fest.assertions.Assertions.assertThat;
+import static play.test.Helpers.contentAsString;
+import static play.test.Helpers.contentType;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.fest.assertions.Assertions.assertThat;
-import static play.test.Helpers.contentAsString;
-import static play.test.Helpers.contentType;
+import org.junit.Test;
+
+import play.mvc.Content;
+import services.CodeTrendItem;
+import view_models.CodeTrendViewModel;
+import views.html.trend_result;
 
 public class TrendViewTest {
 
@@ -24,9 +25,13 @@ public class TrendViewTest {
         CodeTrendViewModel model = new CodeTrendViewModel(items);
         Content html = trend_result.render(model);
         assertThat(contentType(html)).isEqualTo("text/html");
-        assertThat(contentAsString(html)).contains("The code trends are as follows");
-        assertThat(contentAsString(html)).contains("<tr><th>Ruby </th> <td>20.00%</td></tr>");
-        assertThat(contentAsString(html)).contains("<tr><th>Java </th> <td>60.33%</td></tr>");
-        assertThat(contentAsString(html)).contains("<tr><th>Scala </th> <td>20.67%</td></tr>");
+        assertThat(contentAsString(html)).contains(
+                "The code trends are as follows");
+        assertThat(contentAsString(html)).contains(
+                "<tr><th>Ruby </th> <td>20.00%</td></tr>");
+        assertThat(contentAsString(html)).contains(
+                "<tr><th>Java </th> <td>60.33%</td></tr>");
+        assertThat(contentAsString(html)).contains(
+                "<tr><th>Scala </th> <td>20.67%</td></tr>");
     }
 }

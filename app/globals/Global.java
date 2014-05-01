@@ -1,7 +1,8 @@
-import play.*;
-import play.mvc.*;
-import play.mvc.Http.*;
-import play.libs.F.*;
+package globals;
+import play.Logger;
+import play.mvc.SimpleResult;
+import play.mvc.Http.RequestHeader;
+import play.libs.F.Promise;
 
 import static play.mvc.Results.*;
 
@@ -24,7 +25,8 @@ public class Global extends GlobalSettings {
         injector = Guice.createInjector(new AbstractModule() {
             @Override
             protected void configure() {
-                bind(CodeTrendAnalytics.class).to(RandomCodeTrendAnalytics.class);
+                bind(CodeTrendAnalytics.class).to(
+                        RandomCodeTrendAnalytics.class);
             }
         });
     }

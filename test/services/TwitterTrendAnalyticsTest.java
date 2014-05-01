@@ -17,6 +17,7 @@ import exceptions.ApplicationException;
 
 public class TwitterTrendAnalyticsTest {
 
+
 	@Ignore("Need to have credentials to run")
 	@Test
 	public void testGetCodeTrends() {
@@ -42,4 +43,5 @@ public class TwitterTrendAnalyticsTest {
 		});
 	}
 	
+
 }

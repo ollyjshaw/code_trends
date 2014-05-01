@@ -19,6 +19,7 @@ import play.Logger;
 
 public class TwitterTrendAnalytics implements CodeTrendAnalytics {
 
+
 	public List<CodeTrendItem> getCodeTrends(String[] input) throws ApplicationException {
 
 		Twitter twitter = constructTwitterClient();
@@ -115,4 +116,5 @@ public class TwitterTrendAnalytics implements CodeTrendAnalytics {
 		return cb;
 	}
 
+ 
 }

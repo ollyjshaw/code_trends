@@ -29,7 +29,7 @@ public class RandomCodeTrendAnalyticsTest {
 
         assertEquals(100.00, total, 0.1);
     }
-    
+
     
     private InputForm getSimpleInputForm() {
         InputForm form = new InputForm();

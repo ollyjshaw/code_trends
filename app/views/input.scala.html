@@ -1,15 +1,18 @@
 @(inputForm: Form[InputForm])
 @import helper._
 
-@main("title for input view") {
+@implicitField = @{ FieldConstructor(styled_input.f) }
+
+@main("Twitter programming language trends") {
 
     @helper.form(action = routes.Trends.submit()) {
 
-        <legend>Search Twitter popularity</legend>
-        @helper.inputText(inputForm("language1"))
-        @helper.inputText(inputForm("language2"))
-        @helper.inputText(inputForm("language3"))
-        <input class="button" type="submit" value="View trends">
+		@inputText(inputForm("language1"))
+		@inputText(inputForm("language2"))
+		@inputText(inputForm("language3"))
+
+        <input class="button" type="submit" id="view_trends" value="View trends">
 
     }
 }
+
