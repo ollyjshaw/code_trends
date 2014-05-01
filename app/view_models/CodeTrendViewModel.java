@@ -15,6 +15,6 @@ public class CodeTrendViewModel {
 
     public List<CodeTrendItem> getData() {
 
-        return Collections.unmodifiableList( items);//
+        return Collections.unmodifiableList(items);//
     }
 }
