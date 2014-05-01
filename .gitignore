@@ -17,3 +17,4 @@ dist
 /RUNNING_PID
 /.settings
 coverage-error.log
+/chromedriver
