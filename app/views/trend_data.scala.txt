@@ -1,6 +1,21 @@
 @(results : view_models.CodeTrendViewModel)
-{
-	data:[
-		@{results.getData() map((arg:services.CodeTrendItem) => "{language:\""+arg.getLanguage()+"\",score:"+("%.2f".format(arg.getPopularity()))+"}") mkString (",")}
-	]
-}
+[
+    {
+        "language" : "@results.getData().get(0).getLanguage()",
+        "display": "@results.getData().get(0).toString()%",
+        "color":"#332F45",
+        "value" : @results.getData().get(0).getPopularity()
+    },
+    {
+        "language" : "@results.getData().get(1).getLanguage()",
+        "display" : "@results.getData().get(1).toString()%",
+        "color" : "#015770",
+        "value" : @results.getData().get(1).getPopularity()
+    },
+    {
+        "language" : "@results.getData().get(2).getLanguage()",
+        "display" : "@results.getData().get(2).toString()%",
+        "color" : "#2A8782",
+        "value" : @results.getData().get(2).getPopularity()
+    }               
+]

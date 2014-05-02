@@ -24,10 +24,25 @@ public class TrendDataTest {
         CodeTrendViewModel model = new CodeTrendViewModel(items);
         Content txt = trend_data.render(model);
         assertThat(contentAsString(txt)).contains(
-                "{language:\"Ruby\",score:20.00}");
-        assertThat(contentAsString(txt)).contains(
-                "{language:\"Java\",score:60.33}");
-        assertThat(contentAsString(txt)).contains(
-                "{language:\"Scala\",score:20.67}");
+                "[\r\n" + 
+                "    {\r\n" + 
+                "        \"language\" : \"Ruby\",\r\n" + 
+                "        \"display\": \"20.00%\",\r\n" + 
+                "        \"color\":\"#332F45\",\r\n" + 
+                "        \"value\" : 20.0\r\n" + 
+                "    },\r\n" + 
+                "    {\r\n" + 
+                "        \"language\" : Java,\r\n" + 
+                "        \"display\" : \"60.33%\",\r\n" + 
+                "        \"color\" : \"#015770\",\r\n" + 
+                "        \"value\" : 60.33333\r\n" + 
+                "    },\r\n" + 
+                "    {\r\n" + 
+                "        \"language\" : Scala,\r\n" + 
+                "        \"display\" : \"20.67%\",\r\n" + 
+                "        \"color\" : \"#2A8782\",\r\n" + 
+                "        \"value\" : 20.66666\r\n" + 
+                "    }               \r\n" + 
+                "]");
     }
 }
