@@ -44,10 +44,6 @@ public class Global extends GlobalSettings {
         ));
     }
     
-    public Promise<SimpleResult> onBadRequest(RequestHeader request, String error) {
-        return Promise.<SimpleResult>pure(badRequest("Invalid Request"));
-    } 
-    
     public void onStop(Application app) {
         Logger.info("Application shutdown...");
     }
