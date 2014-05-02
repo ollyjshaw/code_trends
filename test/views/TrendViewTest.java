@@ -13,7 +13,6 @@ import play.mvc.Content;
 import services.CodeTrendItem;
 import view_models.CodeTrendViewModel;
 import views.html.trend_result;
-import views.txt.trend_data;
 
 public class TrendViewTest {
 

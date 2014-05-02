@@ -5,13 +5,14 @@ import static org.junit.Assert.*;
 import models.InputForm;
 
 import org.junit.Test;
-
 import view_models.CodeTrendViewModel;
+
 
 public class RandomCodeTrendAnalyticsTest {
 
+
     @Test
-    public void itShouldReturnTrendValueWhenGivenData() {
+    public void itShouldReturnTrendValueWhenGivenData() throws Exception {
 
         CodeTrendAnalytics twitterService = new RandomCodeTrendAnalytics();
         CodeTrendService service = new CodeTrendService(twitterService);
@@ -29,6 +30,7 @@ public class RandomCodeTrendAnalyticsTest {
         assertEquals(100.00, total, 0.1);
     }
 
+    
     private InputForm getSimpleInputForm() {
         InputForm form = new InputForm();
         form.language1 = "Java";
