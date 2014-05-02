@@ -8,16 +8,19 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import exceptions.ApplicationException;
 import twitter4j.Query;
 import twitter4j.QueryResult;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
+import play.Logger;
 
 public class TwitterTrendAnalytics implements CodeTrendAnalytics {
 
-    public List<CodeTrendItem> getCodeTrends(String[] input) {
+    public List<CodeTrendItem> getCodeTrends(String[] input)
+            throws ApplicationException {
 
         Twitter twitter = constructTwitterClient();
 
@@ -47,7 +50,8 @@ public class TwitterTrendAnalytics implements CodeTrendAnalytics {
         return result;
     }
 
-    private int[] runQueries(String[] input, Twitter twitter) {
+    private int[] runQueries(String[] input, Twitter twitter)
+            throws ApplicationException {
         int[] popularityArray = new int[3];
 
         for (int i = 0; i < popularityArray.length; ++i) {
@@ -62,7 +66,10 @@ public class TwitterTrendAnalytics implements CodeTrendAnalytics {
                 } while ((query = result.nextQuery()) != null);
                 popularityArray[i] = localTotal;
             } catch (TwitterException te) {
-                te.printStackTrace();
+                Logger.error(
+                        "Error Querying Twitter with {} caused exception {}",
+                        input, te);
+                throw new ApplicationException("Error Querying Twitter", te);
             }
         }
         return popularityArray;
