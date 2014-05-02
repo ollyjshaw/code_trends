@@ -6,6 +6,6 @@
 GET        /assets/*file        controllers.Assets.at(path="/public", file)
 
 GET        /                    @controllers.Trends.newTrend()
-POST       /trends/             @controllers.Trends.submit()
+GET       /trends/             @controllers.Trends.submit()
 
 GET        /trends/data         @controllers.Trends.data()
